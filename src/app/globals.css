@@ -1,0 +1,69 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --bg: #FAF8F5;
+    --surface: #F2EDE4;
+    --surface-muted: #E8E1D5;
+    --ink: #181716;
+    --ink-muted: #524D47;
+    --ink-faint: #857F77;
+    --accent: #C2410C;
+    --line: #E5DFD5;
+    --line-dark: #181716;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    background-color: var(--bg);
+    color: var(--ink);
+  }
+
+  body {
+    background-color: var(--bg);
+    color: var(--ink);
+    min-height: 100vh;
+    overflow-x: hidden;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* Accessible focus indicators */
+  *:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+  }
+}
+
+/* Editorial hairline utility */
+.border-hairline {
+  border-color: var(--line);
+}
+
+.border-ink {
+  border-color: var(--ink);
+}
+
+/* Clean minimal selection */
+::selection {
+  background-color: #C2410C;
+  color: #FAF8F5;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.2s ease-out forwards;
+}
